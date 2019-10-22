@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace ConsoleDemoTest
 {
-    public class JsonTests
+    public class JsonDocumentTests
     {
         [SetUp]
         public void Setup()
