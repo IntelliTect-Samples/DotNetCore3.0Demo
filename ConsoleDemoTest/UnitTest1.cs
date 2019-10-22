@@ -11,7 +11,7 @@ namespace ConsoleDemoTest
         }
 
         [Test]
-        public void Test1()
+        public void IndexTest()
         {
             int[] arr = { 0, 1, 2, 3, 4, 5 };
             Assert.AreEqual(4, arr[^2]);
@@ -31,6 +31,24 @@ namespace ConsoleDemoTest
             });
 
 
+        }
+
+        [Test]
+        public void RangeTest()
+        {
+            int[] arr = { 0, 1, 2, 3, 4, 5 };
+            // Does not include the end point, but does include the start
+            Assert.AreEqual(3, arr[0..3].Length);
+            Assert.AreEqual(0, arr[0..3][0]);
+            Assert.AreEqual(2, arr[0..3][2]);
+
+            // Returns an Array
+            Assert.AreEqual(arr.GetType(), arr[3..^0].GetType());
+
+            Assert.AreEqual(6, arr[0..^0].Length);
+            Assert.AreEqual(2, arr[2..^2].Length);
+            Assert.AreEqual(2, arr[2..^2][0]);
+            Assert.AreEqual(3, arr[2..^2][1]);
         }
     }
 }
