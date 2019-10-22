@@ -3,7 +3,7 @@ using System;
 
 namespace ConsoleDemoTest
 {
-    public class Tests
+    public class IndexAndRangeTests
     {
         [SetUp]
         public void Setup()
@@ -49,6 +49,13 @@ namespace ConsoleDemoTest
             Assert.AreEqual(2, arr[2..^2].Length);
             Assert.AreEqual(2, arr[2..^2][0]);
             Assert.AreEqual(3, arr[2..^2][1]);
+
+            Range r1 = 0..3;
+            Assert.AreEqual(3, arr[r1].Length);
+            Range r2 = 1..^0;
+            Assert.AreEqual(5, arr[r2].Length);
+            Range r3 = 0..^2;
+            Assert.AreEqual(4, arr[r3].Length);
         }
     }
 }
