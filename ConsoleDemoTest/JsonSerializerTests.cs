@@ -1,3 +1,4 @@
+using DemoContext;
 using NUnit.Framework;
 using System;
 using System.Text.Json;
@@ -11,27 +12,19 @@ namespace ConsoleDemoTest
         {
         }
 
-        public class SuperHero
-        {
-            public string Name { get; set; }
-            public string SuperName { get; set; }
-            public string[] Enemies { get; set; }
-        }
-
         [Test]
         public void JsonSerializerRoundTripTest()
         {
-            var super = new SuperHero
-            {
-                Name = "Diana Prince",
-                SuperName = "Wonder Woman",
-                Enemies = new string[] { "Cheetah", "Silver Swan" }
-            };
+            var super = new SuperHero(1, "Diana Prince", "Wonder Woman");
+            super.AddEnemy("Cheetah");
+            super.AddEnemy("Silver Swan");
 
             var superJson = System.Text.Json.JsonSerializer.Serialize(super);
 
-            var anotherSuper = JsonSerializer.Deserialize<SuperHero>(superJson);
+            var copySuper = JsonSerializer.Deserialize<SuperHero>(superJson);
 
+            Assert.AreEqual(super.Name, copySuper.Name);
+            Assert.AreEqual(super.Enemies.Count, copySuper.Enemies.Count);
         }
     }
 }

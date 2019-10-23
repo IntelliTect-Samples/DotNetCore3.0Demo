@@ -7,9 +7,8 @@ namespace DemoContext
     {
         public SuperDbContext(DbContextOptions<SuperDbContext> options)
             : base(options)
-        {
-        }
+        { }
 
-        public DbSet<SuperHero> SuperHeroes { get; set; }
+        public DbSet<SuperHero> SuperHeroes { get; set; } = null!;
     }
 }

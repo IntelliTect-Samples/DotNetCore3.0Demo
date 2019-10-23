@@ -20,9 +20,9 @@ namespace ConsoleDemoTest
             var options = new DbContextOptionsBuilder<SuperDbContext>()
                 .UseInMemoryDatabase(databaseName: "SuperTester")
                 .Options;
-            var db = new SuperDbContext(options);
-            db.SuperHeroes.Add(new SuperHero { Name = "Dianna Prince", SuperHeroId = 1, SuperName = "Wonder Woman" });
-            db.SuperHeroes.Add(new SuperHero { Name = "Bruce Banner", SuperHeroId = 2, SuperName = "The Hulk" });
+            using var db = new SuperDbContext(options);
+            db.SuperHeroes.Add(new SuperHero(1, "Dianna Prince", "Wonder Woman"));
+            db.SuperHeroes.Add(new SuperHero(2, "Bruce Banner", "The Hulk"));
             db.SaveChanges();
 
             Assert.AreEqual(2, db.SuperHeroes.Count());
@@ -32,10 +32,6 @@ namespace ConsoleDemoTest
 
             var newWonders = db.SuperHeroes.Where(f => f.SuperName.StartsWith("Wonder"));
             Assert.AreEqual(1, newWonders.Count());
-
-            string test = null;
-            test = "test";
-            Assert.AreEqual("test", test);
         }
     }
 }
