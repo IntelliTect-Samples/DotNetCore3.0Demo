@@ -16,10 +16,6 @@ namespace ConsoleDemo
             // Old result: RuntimeInformation.FrameworkDescription: .NET Core 4.6.27415.71
             // New result: RuntimeInformation.FrameworkDescription: .NET Core 3.0.0-preview4-27615-11
 
-
-
-
-
             System.Threading.Thread.Sleep(2000);
         }
     }
