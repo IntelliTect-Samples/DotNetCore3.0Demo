@@ -5,11 +5,6 @@ namespace ConsoleDemoTest
 {
     public class IndexAndRangeTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void IndexTest()
         {

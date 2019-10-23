@@ -6,11 +6,6 @@ namespace ConsoleDemoTest
 {
     public class JsonDocumentTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void JsonDocumentTest()
         {

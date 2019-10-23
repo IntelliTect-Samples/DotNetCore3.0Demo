@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DemoContext
 {
-    public class SuperHero
+    public class SuperHero: ISuperHero, IAlterEgo
     {
         public SuperHero() {
             Name = "";
@@ -36,5 +36,9 @@ namespace DemoContext
             Enemies.Add(name);
         }
 
+        public void Anonymize(string start)
+        {
+            Name = $"{start} {Name}";
+        }
     }
 }

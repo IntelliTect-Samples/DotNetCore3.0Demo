@@ -7,11 +7,6 @@ namespace ConsoleDemoTest
 {
     public class JsonSerializerTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void JsonSerializerRoundTripTest()
         {

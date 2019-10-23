@@ -8,12 +8,7 @@ using System.Text.Json;
 namespace ConsoleDemoTest
 {
     public class SuperDbContextTests
-    {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
+    { 
         [Test]
         public void MethodTest()
         {
