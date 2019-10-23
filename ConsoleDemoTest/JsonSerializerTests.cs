@@ -32,9 +32,6 @@ namespace ConsoleDemoTest
 
             var anotherSuper = JsonSerializer.Deserialize<SuperHero>(superJson);
 
-            Assert.AreEqual(super.Name, anotherSuper.Name);
-            Assert.AreEqual(super.Enemies.Length, anotherSuper.Enemies.Length);
-
         }
     }
 }
