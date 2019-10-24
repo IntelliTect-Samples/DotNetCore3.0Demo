@@ -19,6 +19,10 @@ namespace ConsoleDemoTest
             super.Anonymize();
             Assert.AreEqual("Sir Dianna Prince", super.Name);
 
+            var super2 = (ISuperHero)super;
+            super2.Superify();
+            Assert.AreEqual("Wonder Wonder Woman", super2.SuperName);
+
         }
     }
 }

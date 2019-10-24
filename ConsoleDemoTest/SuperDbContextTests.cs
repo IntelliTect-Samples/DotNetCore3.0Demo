@@ -25,6 +25,9 @@ namespace ConsoleDemoTest
             var wonders = db.SuperHeroes.Where(f => f.StartsWith("Wonder"));
             Assert.Catch<InvalidOperationException>(() => { wonders.Count(); });
 
+            var moreWonders = db.SuperHeroes.ToList().Where(f => f.StartsWith("Wonder"));
+            Assert.AreEqual(1, moreWonders.Count());
+
             var newWonders = db.SuperHeroes.Where(f => f.SuperName.StartsWith("Wonder"));
             Assert.AreEqual(1, newWonders.Count());
         }
